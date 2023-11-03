@@ -40,8 +40,8 @@ export const keycloak = new Keycloak({
 });
 
 keycloak.init({
-  onLoad: 'check-sso',
-  redirectUri: 'http://localhost:5173',
+  onLoad: 'login-required',
+  redirectUri: import.meta.env.VITE_AUTH_REDIRECT_URL,
   checkLoginIframe: false,
   enableLogging: true,
 
